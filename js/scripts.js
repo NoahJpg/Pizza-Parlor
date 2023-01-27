@@ -30,7 +30,11 @@ function handleOrderForm(event) {
   const inputTopping = document.getElementById("topping").value;
   const inputPremiumTopping = document.getElementById("premium-topping").value;
   const inputSize = document.getElementById("size").value;
-  let orderCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
-  document.getElementById()
-
+  let pizzaCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
+  document.getElementById("total").innerText = pizzaCost.Order();
 }
+
+window.addEventListener("load", function() {
+  const form = document.getElementById("pizza-order");
+  form.addEventListener("submit", handleOrderForm);
+})

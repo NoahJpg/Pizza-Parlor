@@ -10,15 +10,14 @@
 <body>
   <h1>Pizza Parlor</h1>
   <form id="pizza-order">
-    <h3>Choose your toppings:</h3>
 
+    <h3>Choose your toppings:</h3>
     <input type="checkbox" id="cheese" checked>
     <label for="cheese">Cheese</label><br>
-
     <input type="checkbox" id="pepperoni">
     <label for="pepperoni">Pepperoni</label><br>
 
-    <h3>Premium toppings (+$) : </h3>
+    <h3>Premium toppings (+ 3$) : </h3>
     <input type="checkbox" id="chicken">
     <label for="chicken">Chicken</label><br>
     <input type="checkbox" id="bacon">
@@ -34,11 +33,13 @@
     <input type="radio" id="large" name="size">
     <label for="large">Large</label><br>
     <input type="radio" id="x-large" name="size">
-    <label for="x-large">X-Large</label><br>
+    <label for="x-large">X-Large</label><br><br>
 
-
-
-
+    <button type="submit">See your total</button>
   </form>
+
+  <div id="order-total">
+    <h3><span id="total"></span></h3>
+  </div>
 </body>
 </html>
