@@ -8,10 +8,16 @@ function PizzaData(topping, premiumTopping, size) {
 }
 
 PizzaData.prototype.Order = function() {
-  if (this.topping.includes("cheese") || this.topping.includes("pepperoni")) {
+  if (this.topping.includes("cheese") && this.topping.includes("pepperoni")) {
+    this.pizzaCost += 2;
+  }
+  else if (this.topping.includes("cheese") || this.topping.includes("pepperoni")) {
     this.pizzaCost += 1;
   }
-  if (this.premiumTopping.includes("chicken") || this.premiumTopping.includes("bacon")) {
+  if (this.premiumTopping.includes("chicken") && this.premiumTopping.includes("bacon")) {
+    this.pizzaCost += 6;
+  }
+  else if (this.premiumTopping.includes("chicken") || this.premiumTopping.includes("bacon")) {
     this.pizzaCost += 3;
   }
   if (this.size === "x-small") {
