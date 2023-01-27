@@ -24,7 +24,7 @@ PizzaData.prototype.Order = function() {
   else if (this.premiumTopping.includes("chicken") || this.premiumTopping.includes("bacon")) {
     this.pizzaCost += 3;
   }
-   if (this.premiumTopping.includes("sausage")) {
+  if (this.premiumTopping.includes("sausage")) {
     this.pizzaCost += 3;
   }
   if (this.size === "x-small") {
