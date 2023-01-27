@@ -8,42 +8,41 @@ function PizzaData(topping, premiumTopping, size) {
 }
 
 PizzaData.prototype.Order = function() {
-    if ((this.topping === "Cheese") || (this.topping === "Pepperoni")) {
-      this.pizzaCost += 1;
-    }
-    if ((this.premiumTopping === "Chicken") || (this.premiumTopping === "Bacon")) {
-      this.pizzaCost += 3;
-    }
-    if (this.size === "X-Small") {
-      this.pizzaCost -= 2;
-    }
-    else if (this.size === "X-Large") {
-      this.pizzaCost += 2;
-    }
-    console.log(this.pizzaCost);
-    return this.pizzaCost;
+  if (this.topping.includes("cheese") || this.topping.includes("pepperoni")) {
+    this.pizzaCost += 1;
+  }
+  if (this.premiumTopping.includes("chicken") || this.premiumTopping.includes("bacon")) {
+    this.pizzaCost += 3;
+  }
+  if (this.size === "x-small") {
+    this.pizzaCost -= 2;
+  }
+  else if (this.size === "x-large") {
+    this.pizzaCost += 2;
+  }
+  return this.pizzaCost;
 }
+
 
 // UI Logic
 function handleOrderForm(event) {
   event.preventDefault();
   const checkbox = document.querySelectorAll("input[type='checkbox']");
-  let inputTopping = "";
-  let inputPremiumTopping = "";
+  let inputTopping = [];
+  let inputPremiumTopping = [];
+
+  checkbox.forEach(function(checkbox) {
+    if(checkbox.checked) {
+      if(checkbox.id === "cheese" || checkbox.id === "pepperoni") {
+        inputTopping.push(checkbox.id);
+      } else {
+        inputPremiumTopping.push(checkbox.id);
+      }
+  }
+});
   const inputSize = document.querySelector("input[name='size']:checked").id;
   let pizzaCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
   document.getElementById("total").innerText = pizzaCost.Order();
-
-
-checkbox.forEach(function(checkbox) {
-  if(checkbox.checked) {
-    if(checkbox.id === "cheese" || checkbox.id === "pepperoni") {
-      inputTopping += checkbox.id + " ";
-    } else {
-      inputPremiumTopping += checkbox.id + " ";
-    }
-  }
-});
 }
 
 window.addEventListener("load", function() {
