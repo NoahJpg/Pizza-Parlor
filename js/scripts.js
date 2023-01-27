@@ -1,16 +1,17 @@
 // Business Logic
 
-function PizzaData(topping, size) {
+function PizzaData(topping, premiumTopping, size) {
   this.topping = topping;
+  this.premiumTopping = premiumTopping;
   this.size = size;
-  this.pizzaCost = 10
+  this.pizzaCost = 10;
 }
 
 PizzaData.prototype.Order = function() {
     if ((this.topping === "Cheese") || (this.topping === "Pepperoni")) {
       this.pizzaCost += 1;
     }
-    else if ((this.topping === "Chicken") || (this.topping === "Bacon")) {
+    if ((this.premiumTopping === "Chicken") || (this.premiumTopping === "Bacon")) {
       this.pizzaCost += 3;
     }
     if (this.size === "X-Small") {
@@ -24,4 +25,11 @@ PizzaData.prototype.Order = function() {
 }
 
 // UI Logic
+function handleOrderForm(event) {
+  event.preventDefault();
+  const inputTopping = document.getElementById("topping").value;
+  const inputPremiumTopping = document.getElementById("premium-topping").value;
+  const inputSize = document.getElementById("size").value;
+  let orderCost = new PizzaData(inputTopping, inputSize)
 
+}
