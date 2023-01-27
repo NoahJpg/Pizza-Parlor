@@ -58,18 +58,13 @@ function handleOrderForm(event) {
   document.getElementById("total").innerText = pizzaCost.Order();
 }
 
-function showImage() {
+function unhideImage() {
   const img = document.getElementById("hidden");
-  img.classList.add("show");
-}
-function hideImage() {
-  const img = document.getElementById("hidden");
-  img.classList.remove("show");
+  document.getElementById("hidden").removeAttribute("id");
 }
 
 window.addEventListener("load", function() {
   const form = document.getElementById("pizza-order");
   form.addEventListener("submit", handleOrderForm);
-  form.addEventListener("submit", showImage);
-  form.addEventListener("reset", hideImage);
+  form.addEventListener("submit", unhideImage);
 })
