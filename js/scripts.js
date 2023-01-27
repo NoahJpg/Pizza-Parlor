@@ -30,6 +30,7 @@ function handleOrderForm(event) {
   const inputTopping = document.getElementById("topping").value;
   const inputPremiumTopping = document.getElementById("premium-topping").value;
   const inputSize = document.getElementById("size").value;
-  let orderCost = new PizzaData(inputTopping, inputSize)
+  let orderCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
+  document.getElementById()
 
 }
