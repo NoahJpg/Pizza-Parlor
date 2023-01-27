@@ -36,7 +36,6 @@ PizzaData.prototype.Order = function() {
   return "$" + this.pizzaCost ;
 }
 
-
 // UI Logic
 function handleOrderForm(event) {
   event.preventDefault();
@@ -59,12 +58,13 @@ function handleOrderForm(event) {
 }
 
 function unhideImage() {
-  const img = document.getElementById("hidden");
-  document.getElementById("hidden").removeAttribute("id");
+  let img = document.getElementById("hidden");
+  img.removeAttribute("class");
 }
 
 window.addEventListener("load", function() {
-  const form = document.getElementById("pizza-order");
+  const form = document.getElementById("pizza-order"); 
   form.addEventListener("submit", handleOrderForm);
   form.addEventListener("submit", unhideImage);
+  
 })
