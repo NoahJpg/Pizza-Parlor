@@ -1,4 +1,4 @@
-# _My Neighbor_
+# _Pizza Parlor_
 
 #### By _**Noah Akinson**_
 
@@ -11,6 +11,7 @@ https://github.com/NoahJpg/Pizza-Parlor.git
 * _HTML_
 * _CSS_
 * _JavaScript_
+* _Bootstrap_
 
 ## Description
 
