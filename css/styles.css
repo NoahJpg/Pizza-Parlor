@@ -1,8 +1,20 @@
+#hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 body {
   background-color:#F7ad45;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 250px;
+  padding-top: 25px;
+  flex-shrink: inherit;
 }
+
 .header {
   font-size: xx-large;
 }
@@ -13,8 +25,8 @@ body {
   background-color: #FFF1D7;
   padding-right: 30px;
   border-top: 20px solid #5f8d37;
-  border-left: 300px solid #bb3e00;
-  border-right: 300px solid #bb3e00;
+  border-left: 200px solid #bb3e00;
+  border-right: 200px solid #bb3e00;
   border-bottom: 20px solid #5f8d37;
   padding-top: 10px;
 }
@@ -26,8 +38,8 @@ body {
   background-color: #FFF1D7;
   padding-right: 30px;
   border-top: 20px solid #F7ad45;
-  border-left: 300px solid #bb3e00;
-  border-right: 300px solid #bb3e00;
+  border-left: 175px solid #bb3e00;
+  border-right: 175px solid #bb3e00;
   border-bottom: 20px solid #5f8d37;
   padding-top: 10px;
 }
@@ -39,8 +51,8 @@ body {
   background-color: #FFF1D7;
   padding-right: 30px;
   border-top: 20px solid #F7ad45;
-  border-left: 300px solid #bb3e00;
-  border-right: 300px solid #bb3e00;
+  border-left: 150px solid #bb3e00;
+  border-right: 150px solid #bb3e00;
   border-bottom: 20px solid #5f8d37;
   padding-top: 10px;
 }
@@ -52,12 +64,8 @@ body {
   background-color: #FFF1D7;
   padding-right: 30px;
   border-top: 20px solid #F7ad45;
-  border-left: 300px solid #bb3e00;
-  border-right: 300px solid #bb3e00;
+  border-left: 125px solid #bb3e00;
+  border-right: 125px solid #bb3e00;
   border-bottom: 20px solid #5f8d37;
   padding-top: 10px;
-}
-.button {
-font-size: xx-large
-
 }

@@ -58,7 +58,18 @@ function handleOrderForm(event) {
   document.getElementById("total").innerText = pizzaCost.Order();
 }
 
+function showImage() {
+  const img = document.getElementById("hidden");
+  img.classList.add("show");
+}
+function hideImage() {
+  const img = document.getElementById("hidden");
+  img.classList.remove("show");
+}
+
 window.addEventListener("load", function() {
   const form = document.getElementById("pizza-order");
   form.addEventListener("submit", handleOrderForm);
+  form.addEventListener("submit", showImage);
+  form.addEventListener("reset", hideImage);
 })
