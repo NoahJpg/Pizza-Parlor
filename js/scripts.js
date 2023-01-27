@@ -21,17 +21,29 @@ PizzaData.prototype.Order = function() {
       this.pizzaCost += 2;
     }
     console.log(this.pizzaCost);
-    return pizzaCost;
+    return this.pizzaCost;
 }
 
 // UI Logic
 function handleOrderForm(event) {
   event.preventDefault();
-  const inputTopping = document.getElementById("topping").value;
-  const inputPremiumTopping = document.getElementById("premium-topping").value;
-  const inputSize = document.getElementById("size").value;
+  const checkbox = document.querySelectorAll("input[type='checkbox']");
+  let inputTopping = "";
+  let inputPremiumTopping = "";
+  const inputSize = document.querySelector("input[name='size']:checked").id;
   let pizzaCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
   document.getElementById("total").innerText = pizzaCost.Order();
+
+
+checkbox.forEach(function(checkbox) {
+  if(checkbox.checked) {
+    if(checkbox.id === "cheese" || checkbox.id === "pepperoni") {
+      inputTopping += checkbox.id + " ";
+    } else {
+      inputPremiumTopping += checkbox.id + " ";
+    }
+  }
+});
 }
 
 window.addEventListener("load", function() {
