@@ -1,10 +1,12 @@
 body {
-  background-color:#F7ad45;
   text-align: center;
+  background-color:#F7ad45;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding-bottom: 250px;
   padding-top: 25px;
   flex-shrink: inherit;
+  border-left: 70px solid #bb3e00;
+  border-right: 70px solid #bb3e00;
 }
 .hidden {
   display: none;
@@ -18,7 +20,7 @@ body {
   list-style-position: inside;
   background-color: #FFF1D7;
   padding-right: 30px;
-  border-top: 20px solid #5f8d37;
+  border-top: 30px solid #5f8d37;
   border-left: 200px solid #bb3e00;
   border-right: 200px solid #bb3e00;
   border-bottom: 20px solid #5f8d37;
