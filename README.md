@@ -81,3 +81,10 @@ Test: add a variable for premium toppings
 Code: let pizza = PizzaData("Cheese", "Chicken" "X-Large")
 Expeceted Output: 16
 
+Describe: PizzaData.prototype.morePizza = function ()
+
+Test: add an object for multiple pizzas
+Code: let pizza = PizzaData.morePizza()
+Expeceted Output: 0
+
+

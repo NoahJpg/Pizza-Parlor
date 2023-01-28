@@ -1,10 +1,12 @@
 // Business Logic
 
-function PizzaData(topping, premiumTopping, size) {
+function PizzaData(topping, premiumTopping, size,) {
   this.topping = topping;
   this.premiumTopping = premiumTopping;
   this.size = size;
   this.pizzaCost = 10;
+  this.amountOfPizza = [];
+  this.totalCost = 0;
 }
 
 PizzaData.prototype.Order = function() {
@@ -33,8 +35,20 @@ PizzaData.prototype.Order = function() {
   else if (this.size === "x-large") {
     this.pizzaCost += 2;
   }
-  return "$" + this.pizzaCost ;
+  this.amountOfPizza.push(this.pizzaCost); // push cost of each pizza to total pizza array
+  this.totalCost = this.amountOfPizza.reduce((a, b) => a + b, 0); // to get the total cost of the pizzas
+  return this.pizzaCost ;
 }
+
+PizzaData.prototype.multiplePizza = function() {
+  let totalCost = 0;
+this.amountOfPizza.forEach(function(pizzaPrice) {
+    totalCost += pizzaPrice;
+});
+this.totalCost = totalCost;
+return this.totalCost;
+}
+
 
 // UI Logic
 function handleOrderForm(event) {
@@ -54,7 +68,7 @@ function handleOrderForm(event) {
 });
   const inputSize = document.querySelector("input[name='size']:checked").id;
   let pizzaCost = new PizzaData(inputTopping, inputPremiumTopping, inputSize);
-  document.getElementById("total").innerText = pizzaCost.Order();
+  document.getElementById("total").innerText = "$" + pizzaCost.Order();
 }
 
 function unhideImage() {
@@ -66,5 +80,6 @@ window.addEventListener("load", function() {
   const form = document.getElementById("pizza-order"); 
   form.addEventListener("submit", handleOrderForm);
   form.addEventListener("submit", unhideImage);
+  form.addEventListener("submit", multiplePizza());
   
 })
