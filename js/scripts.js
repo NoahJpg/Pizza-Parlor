@@ -19,7 +19,6 @@ PizzaData.prototype.Order = function() {
   if (this.topping.includes("pineapple")) {
     this.pizzaCost += 1;
   }
-
   if (this.premiumTopping.includes("chicken") && this.premiumTopping.includes("bacon")) {
     this.pizzaCost += 6;
   }
@@ -35,8 +34,7 @@ PizzaData.prototype.Order = function() {
   else if (this.size === "x-large") {
     this.pizzaCost += 2;
   }
-  this.amountOfPizza.push(this.pizzaCost); // push cost of each pizza to total pizza array
-  this.totalCost = this.amountOfPizza.reduce((a, b) => a + b, 0); // to get the total cost of the pizzas
+
   return this.pizzaCost ;
 }
 
