@@ -1,12 +1,9 @@
 // Business Logic
-
 function PizzaData(topping, premiumTopping, size,) {
   this.topping = topping;
   this.premiumTopping = premiumTopping;
   this.size = size;
   this.pizzaCost = 10;
-  this.amountOfPizza = []; // to hold future pizza amounts
-  this.totalCost = 0; // to calculate total cost of all pizzas 
 }
 
 PizzaData.prototype.Order = function() {
@@ -36,15 +33,6 @@ PizzaData.prototype.Order = function() {
   }
 
   return this.pizzaCost ;
-}
-//  WIP: function to add amount of pizzas to the total cost
-PizzaData.prototype.multiplePizza = function() {
-  let totalCost = 0;
-this.amountOfPizza.forEach(function(pizzaPrice) {
-    totalCost += pizzaPrice;
-});
-this.totalCost = totalCost;
-return this.totalCost;
 }
 
 
@@ -78,6 +66,4 @@ window.addEventListener("load", function() {
   const form = document.getElementById("pizza-order"); 
   form.addEventListener("submit", handleOrderForm);
   form.addEventListener("submit", unhideImage);
-  form.addEventListener("submit", multiplePizza()); // calling ability to see how many pizzas have been ordered
-  
 })
